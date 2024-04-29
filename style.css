@@ -104,9 +104,11 @@ h1 {
     display: flex;
     position: relative;
     justify-content: center;
-    gap: 25px;
-    left: 12px;
-    width: 100%;
+    flex-wrap: wrap;
+    width: 50rem;
+    height: 20rem;
+    left: calc(50% - 23.9rem);
+    gap: 25px;   
 }
 
 .card-container {
@@ -126,7 +128,7 @@ h1 {
 
 /*create a floating animation to have it run when the .card-container is hovered using transition*/
 
-.card-container:hover {
+.card-container:hover{
     transform: translateY(-5px);
     border: 2px solid white;
     cursor: pointer;
@@ -157,9 +159,9 @@ h1 {
 
 .profile-cards .add-account {
     position: relative;
-    left: -12px;
-    width: 56px;
-    height: 56px;
+    left: -1.2rem;
+    width: 5.6rem;
+    height: 5.6rem;
     align-self:center;
     background-size: cover;
     background-image: url(./assets/add-account-logo.png);
@@ -175,19 +177,12 @@ h1 {
 
 /*add the profile info section and general styles to its containers*/
 
-.info-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 75px;
-}
-
-.info-container h2 {
+#info-container h2 {
     font-size: 1.6rem;
     color: white;
 }
 
-.info-container p {
+#info-container p {
     position: relative;
     font-size: 1.3rem;
     color: #6C7D83;
@@ -195,39 +190,41 @@ h1 {
 
 /*personalize position for .brother-info*/
 
-.info-container .brother-info {
-    top: 12px;
+.brother-info {
     position: relative;
-    left: 117px;
+    top: -1.6rem;
+    left: 6.5rem;
     opacity: 0;
     transition: 0.3s ease-in-out;
 }
 
-.info-container .brother-info p {
-    left: -52px;
+.brother-info p {
+    left: -5.2rem;
 }
 
 /*personalize position for .player-info*/
 
-.info-container .player-info {
-    opacity: 0;
-    top: 12px;
+.player-info {
     position: relative;
-    left: 21px;
+    top: -1.6rem;
+    left: -5.5rem;
+    opacity: 0;
     transition: 0.3s ease-in-out;
 }
 
-.info-container .player-info p {
-    left: -32px;
+.player-info p {
+    left: -3.2rem;
 }
 
 /*personalize position for .add-info*/
 
-.info-container .add-info {
-    opacity: 0;
-    top: 8px;
+.add-info {
     position: relative;
-    left: -79px;
+    opacity: 0;
+    z-index: 2;
+    height: 4rem;
+    top: -7.5rem;
+    left: 10.9rem;
     transition: 0.3s ease-in-out;
 }
 
@@ -237,3 +234,5 @@ h1 {
     opacity: 1;
     cursor: pointer;
 }
+
+/*somehow link the hover transitions*/
