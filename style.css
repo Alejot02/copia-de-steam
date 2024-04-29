@@ -65,11 +65,25 @@ header {
     justify-content: space-between;
 }
 
+/*This is the top-right "X" */
+
 header p {
     position: absolute;
     color: #6C7D83;
-    top: 8px;
-    left: calc(50% - -331px);   
+    text-align: center;
+    font-weight: 500;
+    padding-top: 4px;
+    width: 29px;
+    height: 29px;
+    top: 0px;
+    left: calc(50% - -323px);
+    border-top-right-radius: 8px;
+    transition: 0.3s ease-in-out;   
+}
+
+header p:hover {
+    background-color: rgb(194, 18, 18);
+    cursor: pointer;
 }
 
 main {
@@ -95,11 +109,6 @@ h1 {
     width: 100%;
 }
 
-#brother-profile, #player-profile{
-    width: 100%;
-    height: 100%;
-}
-
 .card-container {
     display: flex;
     width: 95px;
@@ -110,14 +119,22 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 
+#brother-profile, #player-profile{
+    width: 100%;
+    height: 100%;
+}
+
+/*create a floating animation to have it run when the .card-container is hovered using transition*/
+
 .card-container:hover {
     transform: translateY(-5px);
     border: 2px solid white;
+    cursor: pointer;
 }
 
-/*Add the three little dots that appear when hovered*/
+/*Have the three little dots show when .card-container is hovered, then when hovered increase opacity*/
 
-.card-container .three-dots {
+.three-dots {
     position: absolute;
     background-image: url(./assets/three-dots.png);
     background-repeat: no-repeat;
@@ -135,7 +152,8 @@ h1 {
 .card-container:hover .three-dots:hover {
     opacity: 1;
 }
-/*create a floating animation to have it run when the .card-container is hovered*/
+
+/*Create the add account*/
 
 .profile-cards .add-account {
     position: relative;
@@ -145,10 +163,77 @@ h1 {
     align-self:center;
     background-size: cover;
     background-image: url(./assets/add-account-logo.png);
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
 }
 
 .add-account:hover {
-    animation: float-in 0.3s ease-in-out forwards;   
+    transform: translateY(-5px);
+    border: 2px solid white;
+    cursor: pointer;
 }
 
-/*Estilos para hacer la pagina mas interactiva/animaciones*/
+/*add the profile info section and general styles to its containers*/
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+}
+
+.info-container h2 {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.info-container p {
+    position: relative;
+    font-size: 1.3rem;
+    color: #6C7D83;
+}
+
+/*personalize position for .brother-info*/
+
+.info-container .brother-info {
+    top: 12px;
+    position: relative;
+    left: 117px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.info-container .brother-info p {
+    left: -52px;
+}
+
+/*personalize position for .player-info*/
+
+.info-container .player-info {
+    opacity: 0;
+    top: 12px;
+    position: relative;
+    left: 21px;
+    transition: 0.3s ease-in-out;
+}
+
+.info-container .player-info p {
+    left: -32px;
+}
+
+/*personalize position for .add-info*/
+
+.info-container .add-info {
+    opacity: 0;
+    top: 8px;
+    position: relative;
+    left: -79px;
+    transition: 0.3s ease-in-out;
+}
+
+/*make all the elements from info-container show when hovered*/
+
+.brother-info:hover, .player-info:hover, .add-info:hover {
+    opacity: 1;
+    cursor: pointer;
+}
