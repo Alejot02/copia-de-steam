@@ -126,14 +126,6 @@ h1 {
     height: 100%;
 }
 
-/*create a floating animation to have it run when the .card-container is hovered using transition*/
-
-.card-container:hover{
-    transform: translateY(-5px);
-    border: 2px solid white;
-    cursor: pointer;
-}
-
 /*Have the three little dots show when .card-container is hovered, then when hovered increase opacity*/
 
 .three-dots {
@@ -169,20 +161,15 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 
-.add-account:hover {
-    transform: translateY(-5px);
-    border: 2px solid white;
-    cursor: pointer;
-}
 
 /*add the profile info section and general styles to its containers*/
 
-#info-container h2 {
+.info-container h2 {
     font-size: 1.6rem;
     color: white;
 }
 
-#info-container p {
+.info-container p {
     position: relative;
     font-size: 1.3rem;
     color: #6C7D83;
@@ -228,11 +215,17 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 
-/*make all the elements from info-container show when hovered*/
+/*Give hover styles to the cards*/
 
-.brother-info:hover, .player-info:hover, .add-info:hover {
-    opacity: 1;
+.brother-effect:hover, .player-effect:hover, .add-effect:hover{
+    transform: translateY(-5px);
+    border: 2px solid white;
     cursor: pointer;
 }
 
-/*somehow link the hover transitions*/
+/*make all the elements from info-container show when hovered*/
+
+.brother-effect:hover ~ .brother-info, .player-effect:hover ~ .player-info, .add-effect:hover ~ .add-info{
+    opacity: 1;
+    cursor: pointer;
+}
