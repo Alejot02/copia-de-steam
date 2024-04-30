@@ -172,7 +172,7 @@ h1 {
 .info-container p {
     position: relative;
     font-size: 1.3rem;
-    color: #6C7D83;
+    color: #959da0;
 }
 
 /*personalize position for .brother-info*/
@@ -215,7 +215,7 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 
-/*Give hover styles to the cards*/
+/*Give independent hover styles to the cards*/
 
 .brother-effect:hover, .player-effect:hover, .add-effect:hover{
     transform: translateY(-5px);
@@ -223,7 +223,12 @@ h1 {
     cursor: pointer;
 }
 
-/*make all the elements from info-container show when hovered*/
+.brother-info:hover, .player-info:hover, .add-info:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+/*make all elements seem connected when hovered*/
 
 .brother-effect:hover ~ .brother-info, .player-effect:hover ~ .player-info, .add-effect:hover ~ .add-info{
     opacity: 1;
